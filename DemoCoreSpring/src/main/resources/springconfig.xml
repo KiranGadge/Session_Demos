@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean class="com.zensar.Student" id="sobj" >
+<!-- setting values for object -->
+<!-- 1.setter methods calling  -->
+<property name="sid" value="101"></property>
+<property name="sname" value="kiran"/>
+<property name="per" value="90"/>
+<property name="course" ref="c1"></property><!-- autowire="byType/byName" -->
+<property name="hobbies">
+<list>
+<value>Reading</value>
+<value>Cooking</value>
+<value>Traveling</value>
+</list>  
+
+</property>
+</bean>
+
+<bean class="com.zensar.Course" id="c1">
+<property name="cid" value="11"></property>
+<property name="coursename" value="Adv Java"></property>
+<property name="trainer" value="Deepa"></property>
+</bean>
+<!-- 2.constructor calling -->
+<!--  <bean class="com.zensar.Student" id="sobj2">
+<constructor-arg value="102"/>
+<constructor-arg value="tejas"/>
+<constructor-arg value="90"/>
+</bean>-->
+</beans>
